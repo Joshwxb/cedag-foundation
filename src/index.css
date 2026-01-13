@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* This is the Golden Yellow from the CEDAG flyer */
+@theme {
+  --color-foundation-yellow: #D4A017;
+  --color-foundation-black: #0A0A0A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
