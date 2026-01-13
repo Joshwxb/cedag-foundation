@@ -60,7 +60,7 @@ const Navbar = ({ onDonateClick }) => {
           </motion.button>
         </div>
 
-        {/* UPDATED: Sleeker Hamburger Icon */}
+        {/* Sleeker Hamburger Icon */}
         <button 
           onClick={toggleMenu}
           className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1 z-[70] relative"
@@ -84,7 +84,6 @@ const Navbar = ({ onDonateClick }) => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Dark Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -93,37 +92,43 @@ const Navbar = ({ onDonateClick }) => {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm lg:hidden z-[65]"
             />
             
-            {/* Menu Drawer */}
             <motion.div 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-2xl lg:hidden z-[66] p-10 flex flex-col"
+              className="fixed top-0 right-0 h-full w-[75%] max-w-xs bg-white shadow-2xl lg:hidden z-[66] p-8 flex flex-col"
             >
-              <div className="mt-12 flex flex-col gap-8 text-2xl font-black text-foundation-black uppercase">
+              {/* UPDATED: Nav Links are now smaller (text-xl instead of 2xl), 
+                  less thick (font-bold instead of black), and have tighter gaps (gap-6) */}
+              <div className="mt-16 flex flex-col gap-6 text-lg font-bold text-foundation-black uppercase tracking-wide">
                 {navLinks.map((link) => (
                   <a 
                     key={link.name} 
                     href={link.href} 
                     onClick={toggleMenu}
-                    className="hover:text-foundation-yellow transition-colors"
+                    className="hover:text-foundation-yellow transition-colors border-b border-gray-50 pb-2"
                   >
                     {link.name}
                   </a>
                 ))}
                 
+                {/* Donate button is also slightly adjusted for the smaller drawer */}
                 <button 
                   onClick={() => { toggleMenu(); onDonateClick(); }}
-                  className="bg-foundation-yellow text-white px-6 py-4 rounded-2xl font-bold text-xl shadow-xl shadow-foundation-yellow/20"
+                  className="mt-4 bg-foundation-yellow text-white px-6 py-3 rounded-xl font-bold text-lg shadow-lg shadow-foundation-yellow/20"
                 >
                   Donate Now
                 </button>
               </div>
               
-              <div className="mt-auto border-t pt-6 text-gray-400 text-sm font-medium">
-                <p>cedagfoundation@gmail.com</p>
-                <p>+234 816 782 7909</p>
+              <div className="mt-auto border-t pt-6 text-gray-500 text-xs font-semibold space-y-1">
+                <p className="flex items-center gap-2">
+                  <span>📧</span> cedagfoundation@gmail.com
+                </p>
+                <p className="flex items-center gap-2">
+                  <span>📞</span> +234 816 782 7909
+                </p>
               </div>
             </motion.div>
           </>
