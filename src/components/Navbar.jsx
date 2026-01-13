@@ -60,22 +60,22 @@ const Navbar = ({ onDonateClick }) => {
           </motion.button>
         </div>
 
-        {/* Hamburger Icon (Mobile Only) */}
+        {/* UPDATED: Sleeker Hamburger Icon */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 z-[70] relative"
+          className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1 z-[70] relative"
         >
           <motion.span 
-            animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            className="w-8 h-1 bg-foundation-black rounded-full block"
+            animate={isOpen ? { rotate: 45, y: 4.5 } : { rotate: 0, y: 0 }}
+            className="w-6 h-[2px] bg-foundation-black rounded-full block"
           />
           <motion.span 
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="w-8 h-1 bg-foundation-black rounded-full block"
+            className="w-6 h-[2px] bg-foundation-black rounded-full block"
           />
           <motion.span 
-            animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            className="w-8 h-1 bg-foundation-black rounded-full block"
+            animate={isOpen ? { rotate: -45, y: -4.5 } : { rotate: 0, y: 0 }}
+            className="w-6 h-[2px] bg-foundation-black rounded-full block"
           />
         </button>
       </div>
