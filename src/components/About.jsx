@@ -4,40 +4,40 @@ import { motion } from 'framer-motion';
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 lg:gap-16">
         
-        {/* Founder Image Section */}
+        {/* Founder Image Section - Reduced Weight and Height */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full md:w-1/3"
+          className="w-full md:w-1/4 flex justify-center md:justify-start"
         >
-          {/* We added h-[400px] to limit the height and object-top to focus on the face */}
-          <div className="border-8 border-foundation-yellow rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+          {/* Added max-width and reduced height h-[320px] */}
+          <div className="max-w-[480px] w-full border-4 border-foundation-yellow rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
             <img 
               src="/aa.jpeg" 
-              alt="Falola Ayomiposi - CEDAG Founder" 
-              className="w-full h-[400px] object-cover object-top" 
+              alt="Victor S. Olawoore - CEDAG Founder" 
+              className="w-full h-[330px] object-cover object-top" 
             />
           </div>
         </motion.div>
 
-        {/* Founder Story Section */}
+        {/* Founder Story Section - Expanded width to 3/4 */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full md:w-2/3 text-left"
+          className="w-full md:w-3/4 text-left"
         >
           <h2 className="text-foundation-yellow font-bold text-xl mb-2 tracking-widest uppercase">Founder's Story</h2>
           <h3 className="text-4xl font-black text-foundation-black mb-6 uppercase">Victor S. Olawoore</h3>
           
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed text-lg">
-              Driven by a deep passion for children's growth and educational development, <strong>Victor s olawoore</strong> established 
+              Driven by a deep passion for children's growth and educational development, <strong>Victor S. Olawoore</strong> established 
               the <strong>CEDAG Foundation</strong> to bridge the gap in quality learning. Our foundation believes that every 
               child deserves the tools to reach their full potential, regardless of their background or circumstances.
             </p>
