@@ -86,43 +86,47 @@ function App() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="lg:w-5/12 bg-foundation-black p-10 md:p-14 text-white flex flex-col justify-between"
+                className="lg:w-5/12 bg-foundation-black p-8 md:p-14 text-white flex flex-col justify-between"
               >
                 <div>
                   <h2 className="text-foundation-yellow font-bold text-xs mb-4 tracking-[0.3em] uppercase">Contact Us</h2>
-                  <h3 className="text-4xl font-black uppercase mb-6 leading-tight">
+                  <h3 className="text-3xl md:text-4xl font-black uppercase mb-6 leading-tight">
                     Let’s Build <br /> <span className="text-foundation-yellow">The Future</span> Together
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-10">
+                  <p className="text-gray-400 leading-relaxed mb-10 text-sm md:text-base">
                     Reach out today to learn more about our missions or to find out how you can contribute to a child's growth.
                   </p>
                 </div>
                 
-                <div className="space-y-8">
-                  <div className="flex items-start gap-4">
-                    <div className="text-foundation-yellow mt-1">
+                <div className="space-y-6 md:space-y-8">
+                  {/* EMAIL - Optimized with flex-col on mobile and break-all */}
+                  <div className="flex flex-col sm:flex-row items-start gap-4">
+                    <div className="text-foundation-yellow mt-1 shrink-0">
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1">Email Support</p>
-                      <p className="font-bold text-lg">cedagfoundation@gmail.com</p>
+                      <p className="font-bold text-base md:text-lg break-all md:break-normal text-white">
+                        cedagfoundation@gmail.com
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="text-foundation-yellow mt-1">
+                  {/* PHONE */}
+                  <div className="flex flex-col sm:flex-row items-start gap-4">
+                    <div className="text-foundation-yellow mt-1 shrink-0">
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     </div>
                     <div>
                       <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1">Phone Line</p>
-                      <p className="font-bold text-lg">+234 816 782 7909</p>
+                      <p className="font-bold text-base md:text-lg text-white">+234 816 782 7909</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
               {/* Right Side: High-End White Form */}
-              <div className="lg:w-7/12 p-10 md:p-14">
+              <div className="lg:w-7/12 p-8 md:p-14">
                 <AnimatePresence mode="wait">
                   {!submitted ? (
                     <motion.div 
@@ -131,28 +135,28 @@ function App() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                     >
-                      <h4 className="text-foundation-black text-2xl font-black mb-8 uppercase tracking-tight">Send A Message</h4>
-                      <form className="space-y-6" onSubmit={handleContactSubmit}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          <div className="space-y-2">
+                      <h4 className="text-foundation-black text-xl md:text-2xl font-black mb-8 uppercase tracking-tight">Send A Message</h4>
+                      <form className="space-y-5" onSubmit={handleContactSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <div className="space-y-1.5">
                             <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Your Name</label>
-                            <input required type="text" placeholder="e.g. Samuel Ade" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all" />
+                            <input required type="text" placeholder="Samuel Ade" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3.5 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all" />
                           </div>
-                          <div className="space-y-2">
+                          <div className="space-y-1.5">
                             <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address</label>
-                            <input required type="email" placeholder="samuel@mail.com" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all" />
+                            <input required type="email" placeholder="samuel@mail.com" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3.5 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all" />
                           </div>
                         </div>
                         
-                        <div className="space-y-2">
-                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">How can we help?</label>
-                          <textarea required rows="4" placeholder="Type your message here..." className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all resize-none"></textarea>
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Message</label>
+                          <textarea required rows="4" placeholder="How can we help?" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3.5 text-foundation-black focus:border-foundation-yellow focus:bg-white outline-none transition-all resize-none"></textarea>
                         </div>
 
                         <motion.button 
                           whileHover={{ scale: 1.01 }} 
                           whileTap={{ scale: 0.99 }} 
-                          className="w-full bg-foundation-yellow text-white py-5 rounded-xl font-black text-sm uppercase tracking-[0.2em] shadow-lg shadow-foundation-yellow/30 hover:brightness-105 transition-all"
+                          className="w-full bg-foundation-yellow text-white py-4 md:py-5 rounded-xl font-black text-xs md:text-sm uppercase tracking-[0.2em] shadow-lg shadow-foundation-yellow/30"
                         >
                           Send Message
                         </motion.button>
@@ -165,13 +169,11 @@ function App() {
                       animate={{ scale: 1, opacity: 1 }} 
                       className="h-full flex flex-col items-center justify-center text-center py-12"
                     >
-                      <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-6">
-                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
-                        </svg>
+                      <div className="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-4">
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                       </div>
-                      <h4 className="text-foundation-black text-2xl font-black mb-2 uppercase">Successful!</h4>
-                      <p className="text-gray-500">Your message has been sent to the foundation.</p>
+                      <h4 className="text-foundation-black text-xl font-black uppercase">Successful!</h4>
+                      <p className="text-gray-500 text-sm">Your message has been sent.</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
